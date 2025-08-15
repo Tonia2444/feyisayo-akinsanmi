@@ -1,3 +1,5 @@
+import IMG_7687 from "../assets/IMG_7687.jpeg"
+
 interface Skills {
     skill: string
     percentage: number
@@ -58,7 +60,7 @@ const About = () => {
         <div className=" ">
             <div className="flex justify-center lg:px-40 md:px-20 px-5 gap-10 mx-auto">
                 <div className="w-full lg:flex hidden">
-                    <img src="src\assets\IMG_7687.jpeg" alt="" className="w-full h-full object-cover " />
+                    <img src={IMG_7687} alt="" className="w-full h-full object-cover " />
                 </div>
                 <div>
                     <div className="flex flex-col gap-3">

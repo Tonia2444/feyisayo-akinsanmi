@@ -1,12 +1,13 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { HiDownload } from "react-icons/hi";
+import profile from "../assets/profile.png"
 
 const Hero = () => {
   return (
     <div  className="bg-black text-white w-full py-5 pt-5">
       <div id="home" className="flex flex-col lg:max-w-[50%] md:max-w-[70%] max-w-[75%] mx-auto items-center gap-5">
         <img
-          src="src\assets\profile.png"
+          src={profile}
           alt=""
           className="lg:max-w-[250px] md:max-w-[150px] max-w-[100px] items-center "
         />

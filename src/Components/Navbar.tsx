@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import logo from "../assets/Logo.png"
 
 interface Menu {
   menuItem: string;
@@ -30,7 +31,7 @@ const Navbar = () => {
         {/* /////////Logo Section/////////// */}
         <div className="lg:w-[130px] md:w-[90px] w-[60px] bg-transparent">
           <AnchorLink className="anchor-link" offset={100} href={"#home"}>
-            <img src="src\assets\Logo.png" alt="" />
+            <img src={logo} alt="" />
           </AnchorLink>
         </div>
         {/* ///////////////Menu/////////////// */}

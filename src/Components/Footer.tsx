@@ -1,5 +1,6 @@
 import { FaPerson, FaCopyright } from "react-icons/fa6";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import Logo from "../assets/Logo.png"
 
 interface footerLinks {
   link: string
@@ -17,7 +18,7 @@ const Footer = () => {
       <div className="mt-10 md:px-10 px-5">
         <div className="grid md:grid-cols-2 grid-rows-1 lg:gap-60 md:gap-10 gap-5 items-center">
           <div className="pr-4 flex flex-col gap-3">
-            <AnchorLink className="anchor-link" offset={100} href={"#home"}><img  src="src\assets\Logo.png" alt="" className="lg:w-[130px] w-[100px]" /></AnchorLink>
+            <AnchorLink className="anchor-link" offset={100} href={"#home"}><img  src={Logo} alt="" className="lg:w-[130px] w-[100px]" /></AnchorLink>
             <p>
               I'm a creative and flexible web developer with experience in HTML,
               CSS, JS, React, and WordPress. I specialize in building custom
