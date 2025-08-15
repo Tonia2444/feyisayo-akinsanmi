@@ -87,7 +87,7 @@ const Navbar = () => {
               onClick={(()=>{
                 handleNavbar()
               })}
-              src="src\assets\Logo.png"
+              src={logo}
               alt=""
               className="md:w-[130] w-[100px] px-5 py-5"
             /></AnchorLink>

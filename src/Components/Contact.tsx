@@ -42,7 +42,37 @@ const contactMe:Contact[] = [
 
 
 
+
 const Contact = () => {
+
+ 
+
+  const onSubmit = async (event:any) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const form = event.target;
+
+    formData.append("access_key", "bda4aeaf-3a84-44d9-8ef6-16e2b8ae6e65");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    }).then((res) => res.json());
+
+    if (res.success) {
+      alert(res.message)
+      form.reset()
+    }
+  };
+
+
   return <div  className="text-white bg-black py-10">
     <div id="contact" className="w-full mx-auto lg:px-30 md:px-15 px-5 mt-10">
       <h1 className="sm:text-4xl text-3xl text-center font-bold">Get in touch</h1>
@@ -66,13 +96,15 @@ const Contact = () => {
           </div>
         </div>
 
+        
+
         <div className="flex flex-col gap-5">
-          <form>
+          <form onSubmit={onSubmit}>
             {myForm.map((form, id) => {
               return (
                 <div key={id} className="flex flex-col gap-5 mt-5">
                   <label>{form.label}</label>
-                  <input type={form.type} placeholder={form.placeholder} className={`bg-neutral-800 w-full py-3 px-2`}/>
+                  <input type={form.type} name="name" placeholder={form.placeholder} required className={`bg-neutral-800 w-full py-3 px-2`}/>
                 </div>
               )
             })}
@@ -80,10 +112,8 @@ const Contact = () => {
               <label className="">Message</label>
               <textarea placeholder="Enter your message" className="bg-neutral-800 w-full px-2 pb-20 mt-5 py-2 "/>
             </div>
+            <button type="submit"  className="px-7 mt-5 p-2 w-fit rounded-full bg-gradient-to-r from-purple-600 to-orange-600 cursor-pointer">Submit now</button>
           </form>
-          <div className="px-7 p-2 w-fit rounded-full bg-gradient-to-r from-purple-600 to-orange-600 cursor-pointer">
-            <p>Submit now</p>
-          </div>
         </div>
       </div>
     </div>
