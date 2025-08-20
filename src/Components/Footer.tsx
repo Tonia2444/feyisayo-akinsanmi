@@ -13,6 +13,32 @@ const myFooter:footerLinks[] = [
 ]
 
 const Footer = () => {
+
+  const onSuBmit = async (event:any) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const form = event.target;
+
+    formData.append("access_key", "bda4aeaf-3a84-44d9-8ef6-16e2b8ae6e65");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    }).then((res) => res.json());
+
+    if (res.success) {
+      alert("Thanks for subscribing!")
+      form.reset()
+    }
+  };
+
   return (
     <div className="w-full bg-black text-white py-10">
       <div className="mt-10 md:px-10 px-5">
@@ -25,11 +51,15 @@ const Footer = () => {
               websites and converting business ideas into digital realities.
             </p>
           </div>
-          <div className="gap-5 flex lg:flex-row w-full">
-            <FaPerson className="absolute z-5 transform translate-3"/>
-            <input type="email" placeholder="Enter your email" className="bg-neutral-800 relative items-center w-full p-2 pl-10 pr-15 rounded-full cursor-pointer hover:border-white hover:border-1" />
-            <p className="p-2 px-5 w-fit rounded-full bg-gradient-to-r from-purple-600 to-orange-600 cursor-pointer hover:scale-110 duration-300">Subscribe</p>
-          </div>
+          
+          <form onSubmit={onSuBmit} >
+            <div className="gap-5 flex lg:flex-row w-full">
+              <FaPerson className="absolute z-5 transform translate-3"/>
+              <input type="email" name="email" placeholder="Enter your email" className="bg-neutral-800 relative items-center w-full p-2 pl-10 pr-15 rounded-full cursor-pointer hover:border-white hover:border-1" />
+              <button type="submit" className="p-2 px-5 w-fit rounded-full bg-gradient-to-r from-purple-600 to-orange-600 cursor-pointer hover:scale-110 duration-300">Subscribe</button>
+            </div>  
+          </form>
+          
         </div>
 
         <div className="w-full my-5 h-0.5 rounded-full bg-neutral-700"></div>

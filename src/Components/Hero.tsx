@@ -1,11 +1,14 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { HiDownload } from "react-icons/hi";
-import profile from "../assets/profile.png"
+import profile from "../assets/profile.png";
 
 const Hero = () => {
   return (
-    <div  className="bg-black text-white w-full py-5 pt-5">
-      <div id="home" className="flex flex-col lg:max-w-[50%] md:max-w-[70%] max-w-[75%] mx-auto items-center gap-5">
+    <div className="bg-black text-white w-full py-15 pt-25">
+      <div
+        id="home"
+        className="flex flex-col lg:max-w-[50%] md:max-w-[70%] max-w-[75%] mx-auto items-center gap-5"
+      >
         <img
           src={profile}
           alt=""
@@ -13,9 +16,10 @@ const Hero = () => {
         />
         <div className="flex flex-col gap-2 mx-auto">
           <h1 className="lg:text-[40px] md:text-[30px] text-[25px]  items-center font-medium text-center">
-            <span className="bg-gradient-to-r lg:text-5xl md:text-4xl text-3xl from-purple-600 to-orange-600 text-transparent bg-clip-text h-0">
+            <span className="bg-gradient-to-r lg:text-5xl md:text-4xl text-3xl from-purple-600 to-orange-600 text-transparent bg-clip-text min-h-0">
               I'm Tonia,
-            </span> a frontend developer & WordPress designer.
+            </span>{" "}
+            a frontend developer & WordPress designer.
           </h1>
 
           <p className="text-center">
@@ -24,10 +28,21 @@ const Hero = () => {
             websites and converting business ideas into digital realities.
           </p>
         </div>
-        <div className="sm:flex flex-row gap-5">
-            <button className="sm:w-fit w-full bg-gradient-to-r from-purple-700 to-orange-600 rounded-full cursor-pointer px-5 py-2 transition hover:scale-105 transfor duration-300 "><AnchorLink className="anchor-link" offset={50} href={"#contact"}>Contact Me</AnchorLink></button>
+        <div className="sm:flex flex-row gap-5 relative z-6">
+          <button className="sm:w-fit w-full bg-gradient-to-r from-purple-700 to-orange-600 rounded-full cursor-pointer px-5 py-2 transition hover:scale-105 transform duration-300  ">
+            <AnchorLink className="anchor-link" offset={50} href={"#contact"}>
+              Contact Me
+            </AnchorLink>
+          </button>
 
-            <a href="src/assets/public/cv.pdf" download={true} className="sm:w-fit w-full rounded-full flex items-center gap-2 px-5 py-2 sm:my-0 my-3 border border-orange-600 cursor-pointer  ">My resume<HiDownload className="group-hover:translate-y-1 transition opacity-60"/></a>
+          <a
+            href="src/assets/public/cv.pdf"
+            download={true}
+            className="sm:w-fit w-full rounded-full flex items-center gap-2 px-5 py-2 sm:my-0 my-3 border border-orange-600 cursor-pointer "
+          >
+            My resume
+            <HiDownload className="group-hover:translate-y-1 transition opacity-60" />
+          </a>
         </div>
       </div>
     </div>
