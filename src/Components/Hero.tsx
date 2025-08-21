@@ -5,7 +5,7 @@ import { motion} from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="bg-black text-white w-full py-15 pt-25">
+    <div className="bg-black text-white w-full py-10 pt-35">
       <motion.div
         initial={{scale: 0.5, opacity: 0}}
         animate={{scale: 1, opacity:1}}

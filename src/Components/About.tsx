@@ -1,4 +1,4 @@
-import {easeInOut, motion} from "framer-motion";
+import {motion} from "framer-motion";
 import IMG_7687 from "../assets/IMG_7687.jpeg"
 
 
