@@ -1,4 +1,5 @@
 import type { IconType } from "react-icons";
+import {motion} from "framer-motion"
 import { FaMailBulk, FaPhoneVolume, FaSearchLocation  }  from "react-icons/fa";
 
 interface Form {
@@ -74,7 +75,11 @@ const Contact = () => {
 
 
   return <div  className="text-white bg-black py-10">
-    <div id="contact" className="w-full mx-auto lg:px-30 md:px-15 px-5 mt-10">
+    <motion.div 
+      initial={{scale: 0.5, opacity: 0}}
+      whileInView={{scale: 1, opacity: 1}}
+      transition={{ duration: 1.5}}
+     id="contact" className="w-full mx-auto lg:px-30 md:px-15 px-5 mt-10">
       <h1 className="sm:text-4xl text-3xl text-center font-bold">Get in touch</h1>
       <div className="md:grid grid-row grid-cols-2 lg:gap-15 md:gap-10 py-15">
         <div className="flex flex-col gap-5 md:pt-15 pt-0">
@@ -116,7 +121,7 @@ const Contact = () => {
           </form>
         </div>
       </div>
-    </div>
+    </motion.div>
   </div>;
 };
 

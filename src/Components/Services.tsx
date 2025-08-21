@@ -1,4 +1,5 @@
 import {FaArrowRight} from 'react-icons/fa';
+import {motion} from "framer-motion"
 
 interface services {
   id: string;
@@ -43,7 +44,12 @@ const myServices: services[] = [
 
 const Services = () => {
   return (
-    <div  className="w-full bg-black text-white md:px-15 px-5 pt-20">
+    <div className="w-full bg-black text-white md:px-15 px-5 pt-20">
+      <motion.div 
+       initial={{scale: 0.5, opacity: 0}}
+       whileInView={{scale: 1, opacity: 1}}
+       transition={{ duration: 1.5}}
+       className='flex flex-col gap-10'>
         <h1 id="services" className=" text-center font-medium text-4xl">My Services</h1>
         <div className="grid lg:grid-cols-3 grid-cols-2 lg:px-25 md:px-5 gap-4 py-10">
             {myServices.map((service, id) => {
@@ -60,6 +66,7 @@ const Services = () => {
                 );
             })}
         </div>
+      </motion.div>
     </div>
   );
 };

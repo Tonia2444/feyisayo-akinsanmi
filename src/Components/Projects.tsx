@@ -1,4 +1,5 @@
 import {FaArrowRight} from 'react-icons/fa'
+import {motion} from "framer-motion"
 import project1 from "../assets/project1.png"
 import project2 from "../assets/project2.png"
 import project3 from "../assets/project3.png"
@@ -22,7 +23,11 @@ const myProjects:Projects[] = [
 const Projects = () => {
   return (
     <div className="bg-black text-white py-10 w-full">
-        <div id='portfolio' className='flex flex-col mx-auto items-center gap-5'>
+        <motion.div
+         initial={{scale: 0.5, opacity: 0}}
+         whileInView={{scale: 1, opacity: 1}}
+         transition={{ duration: 1.5}}
+         id='portfolio' className='flex flex-col mx-auto items-center gap-5'>
             <h1 className="md:text-4xl text-3xl font-medium text-center py-2 mt-15">My latest work</h1>
             <div className="grid lg:grid-cols-3 grid-cols-2 lg:px-25 md:px-15 px-5 py-10 md:p-5 p-0 gap-6 w-full">
                 {myProjects.map((project, id) => {
@@ -37,7 +42,7 @@ const Projects = () => {
                 <p className=''> Show More </p>
                 <FaArrowRight />   
             </div>
-        </div>
+        </motion.div>
     </div>
   )
 }

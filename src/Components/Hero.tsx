@@ -1,11 +1,16 @@
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { HiDownload } from "react-icons/hi";
 import profile from "../assets/profile.png";
+import { motion} from "framer-motion";
 
 const Hero = () => {
   return (
     <div className="bg-black text-white w-full py-15 pt-25">
-      <div
+      <motion.div
+        initial={{scale: 0.5, opacity: 0}}
+        animate={{scale: 1, opacity:1}}
+        transition={{duration: 1.5}}
+
         id="home"
         className="flex flex-col lg:max-w-[50%] md:max-w-[70%] max-w-[75%] mx-auto items-center gap-5"
       >
@@ -14,7 +19,7 @@ const Hero = () => {
           alt=""
           className="lg:max-w-[250px] md:max-w-[150px] max-w-[100px] items-center "
         />
-        <div className="flex flex-col gap-2 mx-auto">
+        <div>
           <h1 className="lg:text-[40px] md:text-[30px] text-[25px]  items-center font-medium text-center">
             <span className="bg-gradient-to-r lg:text-5xl md:text-4xl text-3xl from-purple-600 to-orange-600 text-transparent bg-clip-text min-h-0">
               I'm Tonia,
@@ -44,7 +49,7 @@ const Hero = () => {
             <HiDownload className="group-hover:translate-y-1 transition opacity-60" />
           </a>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

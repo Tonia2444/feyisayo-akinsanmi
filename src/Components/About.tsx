@@ -1,4 +1,6 @@
+import {easeInOut, motion} from "framer-motion";
 import IMG_7687 from "../assets/IMG_7687.jpeg"
+
 
 interface Skills {
     skill: string
@@ -55,7 +57,11 @@ const mySkills:Skills[] = [
 const About = () => {
   return (
     <div  className="w-full py-10 bg-black text-white">
-      <div id="about-me">
+      <motion.div 
+      initial={{scale: 0.5, opacity: 0}}
+      whileInView={{scale: 1, opacity: 1}}
+      transition={{ duration: 1.5}}
+      id="about-me">
         <h1 className="font-medium sm:text-4xl text-3xl  text-center lg:my-15 my-10">About me</h1>
         <div className=" ">
             <div className="flex justify-center lg:px-40 md:px-20 px-5 gap-10 mx-auto">
@@ -107,7 +113,7 @@ const About = () => {
                 })}
             </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
