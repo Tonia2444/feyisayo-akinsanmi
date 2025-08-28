@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <div className="  bg-black text-white w-full py-1">
-      <div className="bg-black text-white w-full fixed top-0 left-0 z-20 h-25">
+      <div className="bg-black text-white w-full fixed top-0 left-0 z-20 md:h-25 h-15">
         <div className="flex justify-between md:px-10 sm:px-20 px-5 py-2 items-center">
           {/* /////////Logo Section/////////// */}
           <div className="lg:w-[130px] md:w-[90px] w-[60px] bg-transparent">
@@ -79,7 +79,7 @@ const Navbar = () => {
       
       </div>
 {/* \///////////////Sidebar Section///////////// */}
-      <div className="w-full relative z-5 ">
+      <div className="w-full relative z-10 ">
         <div className="absolute w-full h-scree top-0"></div>
         <div className={ 
               navbar ? "fixed left-0 top-0 h-full w-[60%] border-r border-r-gray-900 bg-black ease-in-out duration-500"

@@ -5,19 +5,19 @@ import { motion} from "framer-motion";
 
 const Hero = () => {
   return (
-    <div className="bg-black text-white w-full py-10 pt-35">
+    <div className="bg-black text-white w-full py-10 md:pt-35 pt-20 scroll-mt-20">
       <motion.div
         initial={{scale: 0.5, opacity: 0}}
         animate={{scale: 1, opacity:1}}
         transition={{duration: 1.5}}
 
-        id="home"
+        id="home" 
         className="flex flex-col lg:max-w-[50%] md:max-w-[70%] max-w-[75%] mx-auto items-center gap-5"
       >
         <img
           src={profile}
           alt=""
-          className="lg:max-w-[250px] md:max-w-[150px] max-w-[100px] items-center "
+          className="lg:max-w-[250px] md:max-w-[170px] max-w-[120px] items-center "
         />
         <div>
           <h1 className="lg:text-[40px] md:text-[30px] text-[25px]  items-center font-medium text-center">
@@ -41,7 +41,7 @@ const Hero = () => {
           </button>
 
           <a
-            href="src/assets/public/cv.pdf"
+            href="/tonia-portfolio/cv.pdf"
             download={true}
             className="sm:w-fit w-full rounded-full flex items-center gap-2 px-5 py-2 sm:my-0 my-3 border border-orange-600 cursor-pointer "
           >
