@@ -5,18 +5,26 @@ import project2 from "../assets/project2.png"
 import project3 from "../assets/project3.png"
 import project4 from "../assets/project4.png"
 import project5 from "../assets/project5.png"
+import project66 from "../assets/project66.jpg"
 
 interface Projects {
-    image: string
+    image: string,
+    link: string
 }
 
 const myProjects:Projects[] = [
-    {image: `${project3}`},
-    {image: `${project2}`},
-    {image: `${project1}`},
-    {image: `${project4}`},
-    {image: `${project5}`},
-    {image: `${project3}`}
+    {image: `${project3}`,
+link: "https://napharm.org/"},
+    {image: `${project2}`,
+link: "https://oyinbatfo.com/"},
+    {image: `${project1}`,
+link: "https://broadpayment.com/"},
+    {image: `${project4}`,
+link: "https://igrow.ng/"},
+    {image: `${project5}`,
+link: "https://napharm.org/"},
+    {image: `${project66}`,
+link: "https://Tonia2444.github.io/tonia-portfolio"}
 ]
 
 
@@ -34,7 +42,9 @@ const Projects = () => {
                     {myProjects.map((project, id) => {
                         return (
                             <div key={id} className="">
-                                <img src={project.image} alt="" className="w-full sm:h-[200px] h-[150px] object-cover overflow-hidden rounded-sm bg-blend-overlay hover:border-2 hover:border-gray-300 hover:scale-103 duration-300" /> 
+                                <a href={project.link}> 
+                                <img src={project.image} alt="" className="w-full sm:h-[200px] h-[150px] object-cover overflow-hidden border border-gray-800 rounded-sm bg-blend-overlay hover:border-2 hover:border-gray-300 hover:scale-103 duration-300 hover:bg-red-500 opacity-100 hover:opacity-40 cursor-pointer "/>  
+                                </a> 
                             </div>
                         );
                     })}

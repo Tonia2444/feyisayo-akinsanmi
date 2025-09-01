@@ -1,6 +1,6 @@
 import type { IconType } from "react-icons";
 import {motion} from "framer-motion"
-import { FaMailBulk, FaPhoneVolume, FaSearchLocation  }  from "react-icons/fa";
+import { FaMailBulk, FaPhoneVolume, FaSearchLocation, FaLinkedin  }  from "react-icons/fa";
 
 interface Form {
   label: string,
@@ -28,17 +28,21 @@ const myForm:Form[] = [{
 
 const contactMe:Contact[] = [
   {
-  smallDetails: "toniaakinsanmi@gmail.com",
+  smallDetails: "toniaakinsanmi@gmail.com | feyisayoakinsanmi48@gmail.com",
   myIcon: FaMailBulk
   },
   {
-  smallDetails: "+234 906 328 2444",
+  smallDetails: "+234 906 328 2444, +234 706 881 3600",
   myIcon: FaPhoneVolume
+  },
+  {
+  smallDetails: "Feyisayo Akinsanmi",
+  myIcon: FaLinkedin
   },
   {
   smallDetails: "Osun State, Nigeria",
   myIcon: FaSearchLocation
-  } 
+  }
 ]
 
 
