@@ -40,7 +40,7 @@ const Hero = () => {
             </button>
 
             <a
-              href="/tonia-portfolio/cv.pdf"
+              href="/feyisayo-akinsanmi/cv.pdf"
               download={true}
               className="sm:w-fit w-full rounded-full flex items-center gap-2 px-5 py-2 sm:my-0 my-3 border border-orange-600 cursor-pointer "
             >
